@@ -1,0 +1,196 @@
+.Auth-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    background-color: #0c0c0c;
+}
+
+/* Contenedor de la imagen y el formulario */
+.img-form-section {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.img-form-section img {
+    mask-image: linear-gradient(to right, black 70%, transparent);
+    -webkit-mask-image: linear-gradient(to right, black 70%, transparent);
+    width: 500px;
+    object-fit: cover;
+}
+
+/* Estilos del formulario */
+.form-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: #191919;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 400px;
+    margin: auto;
+}
+
+.form-section img{
+    width: 120px;
+}
+
+/* Ajustes para los inputs y botón */
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-section h2{
+    color: #d1f61d;
+    margin: 20px 0px;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button-form {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #d1f61d;
+    color: #333837;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.button-form:hover {
+    background-color: #b2cf23;
+}
+
+.text-form{
+    color: #ffffff;
+    margin-top: 15px;
+}
+
+.form-section p span{
+    color: #d1f61d;
+    cursor: pointer;
+}
+
+.form-section span:hover {
+    color: #b2cf23;
+}
+
+/* Estilo para el popup */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup {
+    background: #fff;
+    padding: 20px 10px;
+    border-radius: 8px;
+    text-align: center;
+    width: 350px;
+}
+
+.popup h3{
+    margin-bottom: 10px;
+}
+
+.popup button {
+    width: 90%;
+    padding: 10px;
+    background-color: #d1f61d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.popup button:hover {
+    background-color: #b2cf23;
+}
+
+/* Estilo para el mensaje de error */
+.error-message {
+    font-size: 15px;
+    margin-top: 10px;
+    text-align: center;
+    color: orange;
+}
+
+
+.password-container {
+    position: relative;
+}
+
+.password-toggle-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 800px) {
+    .Auth-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .img-form-section {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .img-form-section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+
+    .img-form-section::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Oscurece la imagen de fondo */
+    }
+
+    .form-section {
+        position: relative;
+        z-index: 2;
+        background: rgba(25, 25, 25, 0.9); /* Hace el fondo del formulario más opaco */
+        width: 70%;
+        max-width: 300px;
+        padding: 30px;
+        border-radius: 10px;
+    }
+}

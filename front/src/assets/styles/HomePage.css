@@ -1,0 +1,30 @@
+.Home {
+    background-image: url('../images/fondo_header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+    color: #f9fafc;
+  }
+    
+  .motivational-text {
+    margin: 0px 50px 90px 0px;
+    font-size: 25px;
+    max-width: 40%;
+  }
+  
+  
+  /*--------------------------------------MEDIA QUERY---------------------------------------*/
+@media (max-width: 730px) {
+    .motivational-text {
+        max-width: 60%;
+    }
+      
+    .motivational-text {
+      font-size: 19px;
+    }
+}

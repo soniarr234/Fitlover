@@ -1,0 +1,89 @@
+/*_______________________________________________ROUTINE DETAILS PAGE__________________________________________*/
+.routine-details-page {
+    background-color: #0c0c0c;
+    padding: 70px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+/*_______________________TITLE______________________*/
+.title-routine-details-page{
+    margin: 30px 0px;
+    color: aliceblue;
+    text-align: center;
+    font-size: 35px;
+}
+
+.container-routine-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*_______________________BUTTON START / STOP ROUTINE______________________*/
+.start-routine-button{
+    width: 80%;
+    padding: 5px 10px;
+    background-color: #d1f61d;
+    color: #333837;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 35px;
+    margin: 20px 0px 50px 0px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.stop-routine-button{
+    width: 80%;
+    padding: 5px 10px;
+    background-color: orange;
+    color: #333837;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 35px;
+    margin: 20px 0px 50px 0px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/*__________________________________________CONTAINER EXERCISES ROUTINE_______________________________________*/
+.container-exercises-routine{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+
+
+/*__________________________________________BUTTON ADD EXERCISE_______________________________________*/
+.routine-add-exercises-button{
+    margin-top: 30px;
+    background-color: #d1f61d;
+    color: #313538;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/*____________________________________________________________________________________________________________*/
+/*___________________________________________________MADIA QUERYS_____________________________________________*/
+/*____________________________________________________________________________________________________________*/
+@media (max-width: 500px) {
+    .routine-details-page{
+        padding: 70px 10px;
+    }
+
+    .container-exercises-routine{
+        width: 340px;
+        padding: 10px;
+    }
+}

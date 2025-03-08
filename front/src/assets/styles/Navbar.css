@@ -1,0 +1,223 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    z-index: 1000;
+    display: grid;
+    padding: 10px;
+    grid-template-columns: auto 1fr;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    backdrop-filter: blur(5px);
+    align-items: center;
+  }
+
+.navbar-logo {
+    width: 110px;
+    height: 50px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.navbar-links {
+    font-size: 18px;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    justify-self: end;
+    padding-right: 100px;
+}
+
+/* Cuando pasas el ratón por encima de un enlace */
+.navbar-link:hover {
+    transform: scale(1.1);
+    filter: none;
+}
+
+/* Difuminar los enlaces que no están siendo hover */
+.navbar-links:hover > .navbar-link:not(:hover) {
+    filter: blur(4px);
+    transform: scale(0.9);
+}
+
+.navbar-links a {
+    color: #d1f61d;
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 400ms;
+    font-weight: 700;
+}
+
+/* Estilos para el ícono de ajustes (configuración) */
+.navbar-link svg {
+    cursor: pointer;
+    font-size: 24px;
+    color: #d1f61d;
+    margin-top: 3px;
+}
+
+.navbar-links a:hover {
+    color: #d1f61d;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.navbar-link a:hover {
+    background-color: #d1f61d;
+    color: #313538;
+}
+
+.user-menu {
+    position: absolute;
+    top: 60px; /* Ajusta la posición vertical según sea necesario */
+    right: 120px;
+    background-color: #333;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1500;
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-menu button {
+    background-color: #d1f61d;
+    color: #313538;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 300ms;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.user-menu button:hover {
+    background-color: #a0d11d;
+}
+
+.container-name{
+    display: flex;
+    gap: 5px;
+}
+
+.user-menu h1{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.user-menu h4{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.user-menu-item{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    transition: 400ms;
+}
+
+.user-menu-item:hover{
+    font-size: 20px;
+    color: #d1f61d;
+}
+
+.container-popup-under-repair {
+    position: fixed;
+    top: 50%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece un poco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.popup-under-repair {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: #313538;
+    gap: 30px;
+    width: 300px;
+}
+
+.popup-under-repair button{
+    background-color: #313538;
+    color: #d1f61d;
+    border: none;
+    width: 90%;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* Ocultar el icono del menú en pantallas grandes */
+.navbar-menu-icon {
+    display: none;
+    color: #d1f61d;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+/*--------------------------------------MEDIA QUERY---------------------------------------*/
+@media (max-width: 700px) {
+    .navbar-links {
+        padding-right: 60px;
+    }
+}
+
+@media (max-width: 560px) {
+    .navbar-links {
+        display: none; /* Ocultar los enlaces en pantallas pequeñas */
+    }
+
+    .navbar-menu-icon {
+        display: grid; /* Mostrar el icono del menú en pantallas pequeñas */
+        justify-items: end;
+        padding-right: 20px;
+        align-self: center;        
+    }
+
+    /* Mostrar los enlaces solo cuando se active el menú en pantallas pequeñas */
+    .navbar-links--active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px; /* Ajusta esto según la altura de tu navbar */
+        right: 20px;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    .user-menu {
+        top: 240px;
+        right: 0px;
+    }
+}
